@@ -28,10 +28,3 @@ def solve_optimization_problem(pellet_supply,pellet_ducks, pellet_fish, cost_duc
         'Total Profit': int(prob.objective.value()),
     }
     return result
-
-
-# Solve the optimization problem
-result = solve_optimization_problem(pellet_supply=50000, pellet_ducks=100, pellet_fish=125, cost_duck=5, cost_fish=4)
-
-# Print the results
-print(result)
