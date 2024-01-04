@@ -16,13 +16,6 @@ This project aims to reproduce a chapter of a textbook, regarding the sales of r
     docker build -t duckies .
     ```
 
-<<<<<<< HEAD
-    > docker build -t duckies .
-
-- Run the Docker container
-
-    >docker run duckies
-=======
 - Run the Docker container
 
     ```bash
@@ -89,4 +82,3 @@ This project makes use of the following open-source tools and libraries:
 
 - [TeX Live](https://www.tug.org/texlive/) - A comprehensive TeX distribution that includes a wide range of TeX-related programs and packages.
   - Provides the TeX typesetting system used in this project.
->>>>>>> 1729334 (Add MIT License to the project)
