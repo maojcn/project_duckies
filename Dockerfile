@@ -29,14 +29,8 @@ RUN git clone https://resources.oreilly.com/examples/9780596153946.git
 # Copy your files to the Docker image
 COPY . /home/app
 
-# Run the script when the container launches
-# CMD ["python3", "scripts/main.py"]
+# Run smoke tests
+RUN chmod +x ./smoke.sh
 
-# CMD ["make", "main.pdf"]
-
-# CMD ["make", "clean"]
-
-# CMD ["cd", "report"]
-# CMD ["ls", "-l"]
-# Specify the entry point to copy the PDF to /output
-# CMD ["cp", "report/main.pdf", "/Users/maojcn/Workspace/ReproEng/project_duckies/main.pdf"]
+# Run smoke.sh when the container launches
+CMD ["bash", "smoke.sh"]
