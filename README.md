@@ -11,3 +11,7 @@ This project aims to reproduce a chapter of a textbook, regarding the sales of r
     > cd project_duckies
 
     > docker build -t duckies .
+
+- Run the Docker container
+
+    >docker run duckies

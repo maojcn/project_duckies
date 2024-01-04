@@ -7,7 +7,6 @@ python3 ./scripts/main.py
 make main.pdf
 
 make clean
-clear
 
 # Check if the optimized_results.csv file is generated
 if [ -f "results/optimized_results.csv" ]; then
