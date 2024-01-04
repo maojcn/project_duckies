@@ -1,0 +1,114 @@
+
+% VLDB template version of 2020-08-03 enhances the ACM template, version 1.7.0:
+% https://www.acm.org/publications/proceedings-template
+% The ACM Latex guide provides further information about the ACM template
+
+\documentclass[sigconf, nonacm]{acmart}
+
+%% The following content must be adapted for the final version
+% leave empty if no availability url should be set
+\newcommand\vldbavailabilityurl{https://github.com/maojcn/project_duckies}
+% whether page numbers should be shown or not, use 'plain' for review versions, 'empty' for camera ready
+\newcommand\vldbpagestyle{plain} 
+
+\begin{document}
+\title{Reproducibility Engineering Project Report: Project Duckies}
+
+%%
+%% The "author" command and its associated commands are used to define the authors and their affiliations.
+\author{Jiacheng Mao}
+\affiliation{%
+  \institution{University of Passau}
+  \streetaddress{Innstraße 41}
+  \city{Passau}
+  \state{Germany}
+  \postcode{94032}
+}
+\email{jiacheng.mao@outlook.com}
+
+\maketitle
+
+%%% do not modify the following VLDB block %%
+%%% VLDB block start %%%
+\ifdefempty{\vldbavailabilityurl}{}{
+\vspace{.3cm}
+\begingroup\small\noindent\raggedright\textbf{Artifact Availability:}\\
+The source code, data, and/or other artifacts have been made available at \url{\vldbavailabilityurl}.
+\endgroup
+}
+%%% VLDB block end %%%
+
+\section{Introduction}
+
+The original chapter aimed to address the challenge of determining the optimal production mix for maximizing profits in BFU. It delved into the complex decision-making process involved in producing rubber ducks and fish, considering constraints such as rubber supply and production times. Incorporate historical sales data for more accurate estimates. The chapter concluded with the implementation of an optimization model using Solver in Microsoft Excel.~\cite{Michael01}
+
+\subsection{Reproduction Objectives}
+
+The main objectives of this reproduction project were: Replicate the optimization analysis conducted by the Analyst for BFU. Transition from Excel Solver to Pulp for linear programming. Utilize Matplotlib for visualizing the feasible region.
+
+\section{Methodology}
+
+\subsection{Tools and Libraries Used}
+
+\textbf{Pulp Library:} The open-source Pulp library for linear programming in Python. \textbf{Matplotlib:} A Python library for creating static, animated, and interactive visualizations.
+
+\subsection{Step-by-Step Reproduction}
+
+\subsubsection{Visualization with Matplotlib}
+
+Matplotlib was employed to visually represent the feasible region based on the constraints (see Figure \autoref{fig:feasible_region}). Historical sales data was integrated to estimate the maximum sales for ducks and fish (see Figure \autoref{fig:historical_sales}). Assumption: Limited sales anticipated for ducks (up to 150) and fish (up to 50).
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\linewidth]{figures/feasible_region}
+  \caption{Feasible Region}
+  \label{fig:feasible_region}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\linewidth]{figures/historical_sales}
+  \caption{Historical Sales Data}
+  \label{fig:historical_sales}
+\end{figure}
+
+\subsubsection{Implementation of Linear Programming with Pulp}
+
+Python scripts were written to formulate a linear programming problem using Pulp, considering rubber supply, production times, and profit margins for ducks and fish.
+
+\section{Results}
+
+\subsection{Linear Programming Reproduced}
+The linear programming model for optimization was successfully reproduced using the Pulp library. (See table \autoref{tab:sales_profit_summary}
+
+\subsection{Visual Representation with Matplotlib}
+The feasible region was effectively visualized using Matplotlib, offering insights into the decision-making process.
+
+
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{lccc}
+    \toprule
+    \textbf{Product} & \textbf{Quantity} & \textbf{Unit Profit (\$)} & \textbf{Total Profit (\$)} \\
+    \midrule
+    Duck & 150 & 5 & 750 \\
+    Fish & 50 & 4 & 200 \\
+    \midrule
+    \textbf{Total} & & & \textbf{950} \\
+    \bottomrule
+  \end{tabular}
+  \caption{Sales and Profit Summary}
+  \label{tab:sales_profit_summary}
+\end{table}
+
+\section{Conclusion}
+
+This Reproducibility Engineering Project successfully replicated the optimization analysis for BFU's rubber ducks and fish production. 
+
+%\clearpage
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{sample}
+
+\end{document}
+\endinput
